@@ -1,0 +1,48 @@
+generated: '2026-08-07'
+method: probed
+source: https://api.blockskye.com/health
+notes: >-
+  Blockskye publishes no rate-limit documentation. These values were read directly
+  off the response headers of an anonymous, unauthenticated request to the live
+  production API host. They describe what the edge advertises to an unauthenticated
+  caller and MUST NOT be read as a documented, contractual limit for authenticated
+  customers — Blockskye may apply entirely different limits behind its customer
+  login. Recorded because the signaling itself is a real, observable agent-readiness
+  property.
+signaling:
+  style: x-ratelimit
+  documented: false
+  headers:
+  - name: X-RateLimit-Limit
+    observed_value: '100'
+    meaning: requests permitted in the current window
+  - name: X-RateLimit-Remaining
+    observed_value: '99'
+    meaning: requests left in the current window; decremented per observed request
+  - name: X-RateLimit-Reset
+    observed_value: '60'
+    meaning: seconds until the window resets
+  retry_after: not observed
+  429_observed: false
+rate_limits:
+- name: anonymous default
+  applies_to: unauthenticated requests to api.blockskye.com
+  limit_count: 100
+  interval: 60
+  interval_unit: seconds
+  scope: per-caller (inferred from decrementing X-RateLimit-Remaining across
+    successive requests)
+  documented: false
+x-evidence:
+  fetched: '2026-08-07'
+  url: https://api.blockskye.com/health
+  http_status: 200
+  observed_headers:
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '99'
+    x-ratelimit-reset: '60'
+    apigw-requestid: present (AWS API Gateway)
+  method_note: >-
+    Two successive anonymous GETs returned remaining 99 then 98, confirming the
+    counter is live rather than a static header. Headers were not present on the
+    404 control path, so they are emitted by the routed handler.

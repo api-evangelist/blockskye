@@ -42,5 +42,30 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Blockskye is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Blockskye is an enterprise travel management and payments platform for large corporate travel
+programs, founded in 2017 and headquartered in New York. It combines a consumer-grade online
+booking tool sourced through direct supplier and NDC connectivity, BMAX direct settlement that
+wires a customer's ERP straight to travel suppliers so booked travel bypasses corporate cards and
+expense reports, B360 for capturing personal co-brand card loyalty on business trips while holding
+policy compliance, and real-time reporting across every booking channel, with transactions recorded
+to a tamper-resistant distributed ledger. Blockskye delivers an end-to-end corporate travel solution
+in partnership with KAYAK for Business.
+
+## API surface
+
+Blockskye publishes **no public developer portal, API reference, or machine-readable API contract**.
+A live production API host does answer anonymously at `https://api.blockskye.com` (`GET /health`
+returns 200; all other probed routes return a structured JSON 404), but no OpenAPI, Swagger,
+GraphQL SDL, AsyncAPI, MCP manifest, or A2A agent card is served from any Blockskye host. The
+knowledge base at `support.blockskye.com` redirects to a Freshworks OAuth login, so the reference is
+reachable only by an existing customer tenant. See `x-coverage` in `apis.yml` for the probed
+evidence.
+
+## Links
+
+- Website — https://www.blockskye.com/
+- Platform — https://www.blockskye.com/blockskye-platform
+- About — https://www.blockskye.com/about
+- News — https://www.blockskye.com/latestnews
+- Contact — https://www.blockskye.com/contact
+- Customer login — https://horizon.blockskye.com/login
