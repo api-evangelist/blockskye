@@ -1,18 +1,66 @@
 aid: blockskye
 name: Blockskye
-description: 'Blockskye is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Blockskye is an enterprise travel management and payments platform for
+  large corporate travel programs, founded in 2017 and headquartered in New York. It
+  combines a consumer-grade online booking tool sourced through direct supplier and
+  NDC connectivity, BMAX direct settlement that wires a customer''s ERP straight to
+  travel suppliers so booked travel bypasses corporate cards and expense reports, B360
+  for capturing personal co-brand card loyalty on business trips while holding policy
+  compliance, and real-time reporting across every booking channel, with transactions
+  recorded to a tamper-resistant distributed ledger. Blockskye delivers an end-to-end
+  corporate travel solution in partnership with KAYAK for Business. The platform is
+  sold and operated as an enterprise service: the booking, servicing and settlement
+  application runs at horizon.blockskye.com behind a customer login and the knowledge
+  base sits behind a Freshworks OAuth login. Blockskye operates a live production API
+  host at api.blockskye.com but publishes no public developer portal, API reference,
+  or machine-readable API contract.'
+image: https://static1.squarespace.com/static/68efa9e7e26dde07bc4331ce/t/690a135f62cc1b156338a90e/1778097079157/SEOblockskye.jpg?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/blockskye/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-07'
 modified: '2026-08-07'
 tags:
-- Company
-apis: []
+- Travel
+- Corporate Travel
+- Travel Management
+- Payments
+- Settlement
+- Expense Management
+- Booking
+- Blockchain
+- Distributed Ledger
+- Enterprise
+apis:
+- aid: blockskye:blockskye-api
+  name: Blockskye API
+  description: 'Live production API host operated by Blockskye, discovered by probe.
+    The host answers as a Fastify service behind AWS API Gateway: GET /health returns
+    200 with a JSON status/bootId payload, every other probed route returns a structured
+    JSON 404 ("Route GET:<path> not found"), and anonymous responses carry X-RateLimit-Limit,
+    X-RateLimit-Remaining and X-RateLimit-Reset headers. Blockskye publishes no OpenAPI,
+    Swagger, GraphQL or MCP contract for this host and no public API reference — the
+    documented surface is customer-only. Recorded here as an observed endpoint, not
+    as a published, callable developer API.'
+  humanURL: https://www.blockskye.com/blockskye-platform
+  baseURL: https://api.blockskye.com
+  tags:
+  - Travel
+  - Corporate Travel
+  - Payments
+  x-evidence:
+    fetched: '2026-08-07'
+    health_url: https://api.blockskye.com/health
+    health_status: 200
+    root_status: 404
+    control_path: https://api.blockskye.com/zzz-control-path-xyz
+    control_status: 404
+    note: Distinct JSON 404 body per path confirms a real routed API, not a wildcard
+      catch-all.
+  properties:
+  - type: RateLimits
+    url: rate-limits/blockskye-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +68,62 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.blockskye.com/
+- type: Platform
+  url: https://www.blockskye.com/blockskye-platform
+- type: About
+  url: https://www.blockskye.com/about
+- type: Blog
+  url: https://www.blockskye.com/latestnews
+- type: Support
+  url: https://www.blockskye.com/contact
+- type: HelpCenter
+  url: https://support.blockskye.com/support/home
+- type: Login
+  url: https://horizon.blockskye.com/login
+- type: TermsOfService
+  url: https://www.blockskye.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.blockskye.com/privacy-policy
+- type: Careers
+  url: https://www.blockskye.com/careers
+- type: Glossary
+  url: https://www.blockskye.com/glossary
+- type: Library
+  url: https://www.blockskye.com/resources/library
+- type: DomainSecurity
+  url: security/blockskye-domain-security.yml
+- type: LLMsTxt
+  url: llms/blockskye-llms.txt
+x-enrichment:
+  date: '2026-08-07'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Blockskye runs a live production API at api.blockskye.com whose /health endpoint
+    answers 200 anonymously, but the only Blockskye documentation that exists sits in
+    a Freshworks-backed knowledge base where /support/solutions chains 302 to
+    /support/home to /support/login and out to a blockskye.myfreshworks.com OAuth
+    authorize URL, so the reference is reachable only by an existing customer tenant.
+  evidence:
+  - url: https://support.blockskye.com/support/solutions
+    status: 302
+  - url: https://support.blockskye.com/support/login
+    status: 302
+  - url: https://api.blockskye.com/health
+    status: 200
+  - url: https://api.blockskye.com/openapi.json
+    status: 404
+  - url: https://api.blockskye.com/documentation/json
+    status: 404
+  - url: https://www.blockskye.com/llms.txt
+    status: 404
+  - url: https://www.blockskye.com/.well-known/security.txt
+    status: 404
+  - url: https://horizon.blockskye.com/login
+    status: 200
+  checked: '2026-08-07'
