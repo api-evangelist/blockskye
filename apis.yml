@@ -14,6 +14,17 @@ description: 'Blockskye is an enterprise travel management and payments platform
   base sits behind a Freshworks OAuth login. Blockskye operates a live production API
   host at api.blockskye.com but publishes no public developer portal, API reference,
   or machine-readable API contract.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://static1.squarespace.com/static/68efa9e7e26dde07bc4331ce/t/690a135f62cc1b156338a90e/1778097079157/SEOblockskye.jpg?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/blockskye/refs/heads/main/apis.yml
 x-type: company
