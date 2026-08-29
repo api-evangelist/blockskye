@@ -27,6 +27,8 @@ deliveryModel:
   method: derived
 image: https://static1.squarespace.com/static/68efa9e7e26dde07bc4331ce/t/690a135f62cc1b156338a90e/1778097079157/SEOblockskye.jpg?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/blockskye/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.23'
