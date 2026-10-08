@@ -93,6 +93,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/blockskye-rate-limits.yml
 - url: https://www.blockskye.com/latestnews?format=rss
   type: BlogRSS
 - type: Website
