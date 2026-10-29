@@ -64,30 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Blockskye is an enterprise travel management and payments platform for large corporate travel
-programs, founded in 2017 and headquartered in New York. It combines a consumer-grade online
-booking tool sourced through direct supplier and NDC connectivity, BMAX direct settlement that
-wires a customer's ERP straight to travel suppliers so booked travel bypasses corporate cards and
-expense reports, B360 for capturing personal co-brand card loyalty on business trips while holding
-policy compliance, and real-time reporting across every booking channel, with transactions recorded
-to a tamper-resistant distributed ledger. Blockskye delivers an end-to-end corporate travel solution
-in partnership with KAYAK for Business.
+Blockskye is an enterprise travel management and payments platform for large corporate travel programs, founded in 2017 and headquartered in New York. It combines a consumer-grade online booking tool sourced through direct supplier and NDC connectivity, BMAX direct settlement that wires a customer's ERP straight to travel suppliers so booked travel bypasses corporate cards and expense reports, B360 for capturing personal co-brand card loyalty on business trips while holding policy compliance, and real-time reporting across every booking channel, with transactions recorded to a tamper-resistant distributed ledger. Blockskye delivers an end-to-end corporate travel solution in partnership with KAYAK for Business. The platform is sold and operated as an enterprise service: the booking, servicing and settlement application runs at horizon.blockskye.com behind a customer login and the knowledge base sits behind a Freshworks OAuth login. Blockskye operates a live production API host at api.blockskye.com but publishes no public developer portal, API reference, or machine-readable API contract.
 
-## API surface
+**Areas:** Travel · Corporate Travel · Travel Management · Payments · Settlement · Expense Management · Booking · Blockchain · Distributed Ledger · Enterprise
 
-Blockskye publishes **no public developer portal, API reference, or machine-readable API contract**.
-A live production API host does answer anonymously at `https://api.blockskye.com` (`GET /health`
-returns 200; all other probed routes return a structured JSON 404), but no OpenAPI, Swagger,
-GraphQL SDL, AsyncAPI, MCP manifest, or A2A agent card is served from any Blockskye host. The
-knowledge base at `support.blockskye.com` redirects to a Freshworks OAuth login, so the reference is
-reachable only by an existing customer tenant. See `x-coverage` in `apis.yml` for the probed
-evidence.
+## Blockskye on APIs.io
 
-## Links
+Everything profiled for Blockskye is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/blockskye/](https://apis.io/providers/blockskye/)** — or go straight to one of the APIs or properties below.
 
-- Website — https://www.blockskye.com/
-- Platform — https://www.blockskye.com/blockskye-platform
-- About — https://www.blockskye.com/about
-- News — https://www.blockskye.com/latestnews
-- Contact — https://www.blockskye.com/contact
-- Customer login — https://horizon.blockskye.com/login
+### APIs (1)
+
+- [Blockskye API](https://apis.io/apis/blockskye/blockskye-api/) — Live production API host operated by Blockskye, discovered by probe. The host answers as a Fastify service behind AWS API Gateway: GET /health returns 200…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Blockskye Domain Security](https://apis.io/security/blockskye/blockskye-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Blockskye Rate Limits](https://apis.io/rate-limits/blockskye/blockskye-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.blockskye.com/)
+- [Support](https://www.blockskye.com/contact)
+- [Blog](https://www.blockskye.com/latestnews)
+- [Terms of service](https://www.blockskye.com/terms-conditions)
+- [Privacy policy](https://www.blockskye.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 15.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 27.6 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 12.5** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/blockskye/](https://apis.io/providers/blockskye/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Blockskye: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/blockskye/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
